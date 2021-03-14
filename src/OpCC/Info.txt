@@ -1,0 +1,7 @@
+﻿wie NCC - Norton Control Center
+TM (Time Mark)
+
+C:\Dev\TFS\Git\KaJourWin\KaJour\Dependencies\BuildTools\OpCC
+C:\Dev\GitHub\OtmarP\OpCC\src\OpCC\bin\Debug
+
+-eot-

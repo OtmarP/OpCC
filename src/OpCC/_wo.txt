@@ -1,0 +1,2 @@
+C:\Dev\GitHub\OtmarP\OpCC\src\OpCC\bin\Debug
+C:\Dev\TFS\Git\KaJourWin\KaJour\Dependencies\BuildTools\OpCC
