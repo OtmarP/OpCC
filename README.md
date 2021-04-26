@@ -22,4 +22,10 @@ Command-Line-Tool for Batch and Automation (Azure-DevOps Pipeline)
                                6 = Yellow      E = Light Yellow
                                7 = White       F = Bright White
 
-### TM - TimeMark is a Replica from the Norton Utilities (TIMEMARK)
+### TM - TimeMark (4.5) is a Tool from the Norton Utilities, (c) 1984-1988 Peter Norton
+    tm start
+    tm stop
+
+### NCC - NortonCommandCenter (6.1/5.1) is a Tool from the Norton Utilities, (c) 1991 Symantec Corporation
+    ncc /start
+    ncc /stop
