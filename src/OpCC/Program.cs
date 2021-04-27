@@ -16,6 +16,8 @@ namespace OpCC
 
         static void Main( string[] args )
         {
+            // ToDo: OpCC -wait:5
+
             VersionNumber = "1.0.15.1202";
             AddRDToVersion();
 
@@ -107,7 +109,7 @@ namespace OpCC
             if( dispHelp )
             {
                 Console.WriteLine( "OpCC [-?] (Help)" );
-                Console.WriteLine( "OpCC [-start|-time|-stop] ... TM - TimeMark" );
+                Console.WriteLine( "OpCC [-start|-time|-stop] ... TM - TimeMark, NCC - Norton Control Center" );
                 Console.WriteLine( "OpCC [-clear] ............... Clear all EnvironmentVariables" );
             }
         }

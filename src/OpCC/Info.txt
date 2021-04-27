@@ -1,4 +1,5 @@
-﻿wie NCC - Norton Control Center
+﻿wie NCC - Norton Control Center (https://www.pcjs.org/software/pcx86/util/norton/6.01/)
+          Norton Command Center
 TM (Time Mark)
 
 C:\Dev\TFS\Git\KaJourWin\KaJour\Dependencies\BuildTools\OpCC

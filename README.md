@@ -26,6 +26,6 @@ Command-Line-Tool for Batch and Automation (Azure-DevOps Pipeline)
     tm start
     tm stop
 
-### NCC - NortonCommandCenter (6.1/5.1) is a Tool from the Norton Utilities, (c) 1991 Symantec Corporation
+### NCC - NortonControlCenter (6.1/5.1) is a Tool from the Norton Utilities, (c) 1991 Symantec Corporation
     ncc /start
     ncc /stop
