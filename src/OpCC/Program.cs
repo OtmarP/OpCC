@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 
 namespace OpCC
 {
@@ -12,14 +13,17 @@ namespace OpCC
         // EnvironmentVariableTarget.User ...... HKEY_CURRENT_USER\Environment 
 
         public const string _OPCC_TM_START = "OPCC_TM_START";
+        public static bool _launchedFromStudio;
         public static string VersionNumber = "";
 
         static void Main(string[] args)
         {
-            // ToDo: OpCC -wait:5
-
             VersionNumber = "1.0.15.1202";
+            bool flag = false;
+            //bool flag = Helper.CheckLaunchedFromStudio();
+            _launchedFromStudio = flag;
             AddRDToVersion();
+            //version = Helper.AddRDToVersion(version);
 
             // Check Parameter
             if (args.Length == 0)
@@ -58,8 +62,15 @@ namespace OpCC
                     TMStop(true);
                     return;
                 }
+                else if (args[0].StartsWith("-wait:"))
+                {
+                    // OpCC -wait:5
+                    WaitSeconds(args[0]);
+                    return;
+                }
 
                 // next...
+                // ToDo: -display:Text -c:0C
 
                 DisplayWrongParameter();
             }
@@ -109,9 +120,10 @@ namespace OpCC
             Console.WriteLine(message);
             if (dispHelp)
             {
-                Console.WriteLine("OpCC [-?] (Help)");
-                Console.WriteLine("OpCC [-start|-time|-stop] ... TM - TimeMark, NCC - Norton Control Center");
-                Console.WriteLine("OpCC [-clear] ............... Clear all EnvironmentVariables");
+                Console.WriteLine("OpCC -? .................... Display Help");
+                Console.WriteLine("OpCC -start|-time|-stop .... TM - TimeMark, NCC - Norton Control Center");
+                Console.WriteLine("OpCC -clear ................ Clear all EnvironmentVariables");
+                Console.WriteLine("OpCC -wait:5 ............... Waits for 5 Seconds");
             }
         }
 
@@ -225,6 +237,41 @@ namespace OpCC
                 System.Environment.Exit(0);
                 return;
             }
+        }
+
+        public static void WaitInIDE(bool launchedFromStudio)
+        {
+            if (launchedFromStudio)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("[DeveloperMode] weiter mit einer Taste...");
+                Console.ReadKey();
+            }
+        }
+
+        public static void WaitSeconds(string para)
+        {
+            string[] strArrays = para.Split(new char[] { ':' });
+            int num = 5;
+            if ((int)strArrays.Length >= 2)
+            {
+                try
+                {
+                    num = Convert.ToInt32(strArrays[1]);
+                }
+                catch (Exception exception)
+                {
+                }
+            }
+            Console.Write(string.Format("Wait {0} Seconds: ", num));
+            for (int i = 0; i < num; i++)
+            {
+                Thread.Sleep(1000);
+                Console.Write(".");
+            }
+            Console.WriteLine("OK");
+            Program.WaitInIDE(_launchedFromStudio);
+            Environment.Exit(0);
         }
     }
 }
