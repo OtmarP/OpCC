@@ -91,7 +91,7 @@ namespace OpCC
         {
             // Display Help
             DisplayHeaderAndHelp(true, versionNumber, "", true);
-
+            //WaitInIDE(_launchedFromStudio);
             Environment.Exit(0);
         }
 
@@ -100,7 +100,7 @@ namespace OpCC
             Console.ForegroundColor = ConsoleColor.Red;
             DisplayHeaderAndHelp(true, versionNumber, "Warning: wrong Parameter.", false);
             Console.ResetColor();
-
+            //WaitInIDE(_launchedFromStudio);
             Environment.Exit(1);
         }
 
@@ -119,7 +119,8 @@ namespace OpCC
                 Console.WriteLine("OpCC -wait:5 ............... Waits for 5 Seconds");
                 Console.WriteLine("OpCC -display:Text -c:0C ... Display 'Text' in Color Red");
                 Console.WriteLine("OpCC -display:Text -c:0A ... Display 'Text' in Color Green");
-                Console.WriteLine("                               -c:BF the first corresponds to the background, the second the foreground");
+                Console.WriteLine("                               -c:BF the first corresponds to the background,");
+                Console.WriteLine("                                     the second the foreground");
                 Console.WriteLine("                               0 = Black       8 = Gray");
                 Console.WriteLine("                               1 = Blue        9 = Light Blue");
                 Console.WriteLine("                               2 = Green       A = Light Green");
