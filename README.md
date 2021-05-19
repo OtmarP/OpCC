@@ -7,20 +7,21 @@ Command-Line-Tool for Batch and Automation (Azure-DevOps Pipeline)
     OpCC v:1.0.18.321.R
 
     OpCC -? .................... Display Help
-    OpCC -start|-time|-stop .... TM - TimeMark
+    OpCC -start|-time|-stop .... TM - TimeMark, NCC - Norton Control Center
     OpCC -clear ................ Clear all EnvironmentVariables
     OpCC -wait:5 ............... Waits for 5 Seconds
     OpCC -display:Text -c:0C ... Display 'Text' in Color Red
     OpCC -display:Text -c:0A ... Display 'Text' in Color Green
-                               -c:BF the first corresponds to the background, the second the foreground
-                               0 = Black       8 = Gray
-                               1 = Blue        9 = Light Blue
-                               2 = Green       A = Light Green
-                               3 = Aqua        B = Light Aqua
-                               4 = Red         C = Light Red
-                               5 = Purple      D = Light Purple
-                               6 = Yellow      E = Light Yellow
-                               7 = White       F = Bright White
+                                   -c:BF the first corresponds to the background,
+                                         the second the foreground
+                                   0 = Black       8 = Gray
+                                   1 = Blue        9 = Light Blue
+                                   2 = Green       A = Light Green
+                                   3 = Aqua        B = Light Aqua
+                                   4 = Red         C = Light Red
+                                   5 = Purple      D = Light Purple
+                                   6 = Yellow      E = Light Yellow
+                                   7 = White       F = Bright White
 
 ### TM - TimeMark (4.5) is a Tool from the Norton Utilities, (c) 1984-1988 Peter Norton
     tm start
