@@ -138,24 +138,24 @@ namespace OpCC
             string envValue;
 
             envName = "OPCC_TM_START";
-            envValue = System.Environment.GetEnvironmentVariable(envName, EnvironmentVariableTarget.User);
+            envValue = Environment.GetEnvironmentVariable(envName, EnvironmentVariableTarget.User);
             if (!string.IsNullOrEmpty(envValue))
             {
                 Console.WriteLine("clear EnvironmentVariable: " + envName);
-                System.Environment.SetEnvironmentVariable(envName, "", EnvironmentVariableTarget.User);
+                Environment.SetEnvironmentVariable(envName, "", EnvironmentVariableTarget.User);
             }
 
             envName = "OPCC_TM";
-            envValue = System.Environment.GetEnvironmentVariable(envName, EnvironmentVariableTarget.User);
+            envValue = Environment.GetEnvironmentVariable(envName, EnvironmentVariableTarget.User);
             if (!string.IsNullOrEmpty(envValue))
             {
                 Console.WriteLine("clear EnvironmentVariable: " + envName);
-                System.Environment.SetEnvironmentVariable(envName, "", EnvironmentVariableTarget.User);
+                Environment.SetEnvironmentVariable(envName, "", EnvironmentVariableTarget.User);
             }
 
             Console.WriteLine("clear all EnvironmentVariables... OK.");
 
-            System.Environment.Exit(0);
+            Environment.Exit(0);
             return;
         }
 
@@ -165,22 +165,24 @@ namespace OpCC
             long startTicks = DateTime.Now.Ticks;
             DateTime startTime = new DateTime(startTicks);
             string startString = startTime.ToString("ddd.dd.MM.yyyy HH:mm:ss");
-            System.Environment.SetEnvironmentVariable(_OPCC_TM_START, startTicks.ToString(), EnvironmentVariableTarget.User);
+            Environment.SetEnvironmentVariable(_OPCC_TM_START, startTicks.ToString(), EnvironmentVariableTarget.User);
             Console.WriteLine("Start: " + startTime);
 
-            System.Environment.Exit(0);
+            Environment.Exit(0);
             return;
         }
 
         public static void TMStop(bool stop)
         {
             // calc Time-diff and display
-            string startTicksString = System.Environment.GetEnvironmentVariable(_OPCC_TM_START, EnvironmentVariableTarget.User);
+            string startTicksString = Environment.GetEnvironmentVariable(_OPCC_TM_START, EnvironmentVariableTarget.User);
             if (string.IsNullOrEmpty(startTicksString))
             {
+
                 Console.WriteLine("Warning: no -start.");
 
-                System.Environment.Exit(1);
+
+                Environment.Exit(1);
                 return;
             }
             else
@@ -192,7 +194,7 @@ namespace OpCC
                 // clear
                 if (stop)
                 {
-                    System.Environment.SetEnvironmentVariable(_OPCC_TM_START, "", EnvironmentVariableTarget.User);
+                    Environment.SetEnvironmentVariable(_OPCC_TM_START, "", EnvironmentVariableTarget.User);
                 }
 
                 long stopTicks = DateTime.Now.Ticks;
@@ -208,30 +210,36 @@ namespace OpCC
                 //TimeSpan durationTime = "";
 
                 string formatString = @"hh\:mm\:ss\.fff";
+
                 string postString = timespan.TotalHours.ToString("#,##0.00") + " Std";
                 if (timespan.TotalMilliseconds >= 1)
                 {
                     formatString = @"s\.fff";
+
                     postString = timespan.TotalMilliseconds.ToString("#,##0") + " MSec";
                 }
                 if (timespan.TotalSeconds >= 1)
                 {
                     formatString = @"ss\.fff";
+
                     postString = timespan.TotalSeconds.ToString("#,##0.00") + " Sec";
                 }
                 if (timespan.TotalMinutes >= 1)
                 {
                     formatString = @"mm\:ss\.fff";
+
                     postString = timespan.TotalMinutes.ToString("#,##0.00") + " Min";
                 }
                 if (timespan.TotalHours >= 1)
                 {
                     formatString = @"hh\:mm\:ss\.fff";
+
                     postString = timespan.TotalHours.ToString("#,##0.00") + " Std";
                 }
                 if (timespan.TotalHours >= 24)
                 {
                     formatString = @"dd\.hh\:mm\:ss\.fff";
+
                     postString = timespan.TotalHours.ToString("#,##0.00") + " Std";
                 }
                 string durationString = timespan.ToString(formatString);
@@ -239,7 +247,7 @@ namespace OpCC
                 Console.WriteLine("Start-Stop: " + startString + " - " + stopString);
                 Console.WriteLine("Duration: " + durationString + " (" + postString + ")");
 
-                System.Environment.Exit(0);
+                Environment.Exit(0);
                 return;
             }
         }
