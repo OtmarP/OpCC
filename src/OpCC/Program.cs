@@ -17,8 +17,7 @@ namespace OpCC
         static void Main(string[] args)
         {
             string version = "1.0.18.321";    // "1.0.15.1202";
-            bool flag = Helper.CheckLaunchedFromStudio();
-            _launchedFromStudio = flag;
+            _launchedFromStudio = Helper.CheckLaunchedFromStudio();
             version = Helper.AddRDToVersion(version);
 
             // Check Parameter
@@ -65,7 +64,7 @@ namespace OpCC
             }
             if (!args[0].StartsWith("-display:"))
             {
-                WaitInIDE(flag);
+                //WaitInIDE(_launchedFromStudio);
                 DisplayWrongParameter(version);
                 return;
             }
@@ -91,7 +90,7 @@ namespace OpCC
         {
             // Display Help
             DisplayHeaderAndHelp(true, versionNumber, "", true);
-            //WaitInIDE(_launchedFromStudio);
+            WaitInIDE(_launchedFromStudio);
             Environment.Exit(0);
         }
 
@@ -100,7 +99,7 @@ namespace OpCC
             Console.ForegroundColor = ConsoleColor.Red;
             DisplayHeaderAndHelp(true, versionNumber, "Warning: wrong Parameter.", false);
             Console.ResetColor();
-            //WaitInIDE(_launchedFromStudio);
+            WaitInIDE(_launchedFromStudio);
             Environment.Exit(1);
         }
 
