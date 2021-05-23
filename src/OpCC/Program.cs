@@ -78,7 +78,7 @@ namespace OpCC
 
         public static void DisplayNoParameter(string versionNumber)
         {
-            // Display Help
+            // Display Help / no Parameter
             Console.ForegroundColor = ConsoleColor.Red;
             DisplayHeaderAndHelp(true, versionNumber, "Warning: no Parameter.", true);
             Console.ResetColor();
