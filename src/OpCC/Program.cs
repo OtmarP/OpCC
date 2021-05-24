@@ -82,7 +82,9 @@ namespace OpCC
             Console.ForegroundColor = ConsoleColor.Red;
             DisplayHeaderAndHelp(true, versionNumber, "Warning: no Parameter.", true);
             Console.ResetColor();
+
             WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
         }
 
@@ -90,7 +92,9 @@ namespace OpCC
         {
             // Display Help
             DisplayHeaderAndHelp(true, versionNumber, "", true);
+
             WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
         }
 
@@ -99,7 +103,9 @@ namespace OpCC
             Console.ForegroundColor = ConsoleColor.Red;
             DisplayHeaderAndHelp(true, versionNumber, "Warning: wrong Parameter.", false);
             Console.ResetColor();
+
             WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(1);
         }
 
@@ -177,9 +183,7 @@ namespace OpCC
             string startTicksString = Environment.GetEnvironmentVariable(_OPCC_TM_START, EnvironmentVariableTarget.User);
             if (string.IsNullOrEmpty(startTicksString))
             {
-
                 Console.WriteLine("Warning: no -start.");
-
 
                 Environment.Exit(1);
                 return;
@@ -282,7 +286,9 @@ namespace OpCC
                 Console.Write(".");
             }
             Console.WriteLine("OK");
+
             WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
         }
 
@@ -338,7 +344,9 @@ namespace OpCC
             }
             Console.WriteLine(str);
             Console.ResetColor();
+
             WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
         }
 
