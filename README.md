@@ -27,6 +27,23 @@ Command-Line-Tool for Batch and Automation (Azure-DevOps Pipeline)
     tm start
     tm stop
 
+Copyright 1984-1988, Peter Norton All rights reserved  
+Standard Edition 4.50  
+Tue 10/11/88  
+(C) Copr 1984-88, Peter Norton
+
+TM [START] [STOP] [Kommentar] [Zusätze]
+
+Zusätze
+* /Cn   Wählt Stoppuhr "n" aus ("n" ist 1, 2, 3 oder 4)
+* /L    Schreibt TM-Informationen links auf den Monitor
+* /LOG  Bereitet Informationsausgabe für Drucker oder Datei auf
+* /N    Keine Einblendung aktueller Zeit oder Datum
+
+TM-Time Mark
+
+Keine Startzeit
+
 ### NCC - NortonControlCenter (6.1/5.1) is a Tool from the Norton Utilities, (c) 1991 Symantec Corporation
     ncc /start
     ncc /stop
