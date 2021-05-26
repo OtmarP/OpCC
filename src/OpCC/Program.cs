@@ -160,6 +160,8 @@ namespace OpCC
 
             Console.WriteLine("clear all EnvironmentVariables... OK.");
 
+            WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
             return;
         }
