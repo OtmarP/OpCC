@@ -187,6 +187,8 @@ namespace OpCC
             {
                 Console.WriteLine("Warning: no -start.");
 
+                WaitInIDE(_launchedFromStudio);
+
                 Environment.Exit(1);
                 return;
             }
@@ -251,6 +253,8 @@ namespace OpCC
 
                 Console.WriteLine("Start-Stop: " + startString + " - " + stopString);
                 Console.WriteLine("Duration: " + durationString + " (" + postString + ")");
+
+                //WaitInIDE(_launchedFromStudio);
 
                 Environment.Exit(0);
                 return;
