@@ -175,6 +175,8 @@ namespace OpCC
             Environment.SetEnvironmentVariable(_OPCC_TM_START, startTicks.ToString(), EnvironmentVariableTarget.User);
             Console.WriteLine("Start: " + startTime);
 
+            WaitInIDE(_launchedFromStudio);
+
             Environment.Exit(0);
             return;
         }
