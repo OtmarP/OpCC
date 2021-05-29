@@ -256,7 +256,7 @@ namespace OpCC
                 Console.WriteLine("Start-Stop: " + startString + " - " + stopString);
                 Console.WriteLine("Duration: " + durationString + " (" + postString + ")");
 
-                //WaitInIDE(_launchedFromStudio);
+                WaitInIDE(_launchedFromStudio);
 
                 Environment.Exit(0);
                 return;
