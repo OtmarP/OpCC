@@ -57,6 +57,11 @@ namespace OpCC
             }
 
             // OpCC -wait:5
+            if (args[0].StartsWith("-wait"))
+            {
+                WaitSeconds(args[0] + ":");
+                return;
+            }
             if (args[0].StartsWith("-wait:"))
             {
                 WaitSeconds(args[0]);
